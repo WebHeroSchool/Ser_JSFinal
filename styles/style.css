@@ -1,0 +1,422 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-image: url(../images/background.png);
+    background-size: 110%;
+    font-family: 'Roboto', Arial, Helvetica, sans-serif;
+    color: #fff;
+}
+
+.hidden {
+    display: none;
+}
+
+.rotate {
+    transform: rotateY(180deg);
+}
+
+/* Стили для меню */
+
+.menu {
+    margin: 130px 70px 104px 104px;
+}
+
+.menu__title {
+    margin-bottom: 8px;
+    font-size: 57px;
+}
+
+.menu__rules {
+    font-size: 20px;
+    margin: 0;
+}
+
+.menu__items {
+    display: flex;
+    flex-direction: column;
+    margin-top: 60px;
+    font-size: 50px;
+    font-weight: bold;
+}
+
+.menu__item {
+    display: none;
+}
+
+.menu__item-label {
+    margin-bottom: 24px;
+    cursor: pointer;
+}
+
+.menu__item-label:last-of-type {
+    margin-bottom: 0;
+}
+
+.menu__item-label::before {
+    content: "";
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    margin: 0 24px 4px 0;
+}
+
+.menu__item:checked + .menu__item-label::before {
+    background-image: url(../images/rectangle.svg);
+    background-size: 100%;
+}
+
+.menu__wrapper {
+    display: flex;
+    justify-content: space-between;
+}
+
+.menu__start-button {
+    margin-top: 112px;
+    width: 352px;
+    height: 95px;
+    font-family: 'Roboto', Arial, Helvetica, sans-serif;
+    font-size: 32px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #d62b2e;
+    border: none;
+    border-radius: 7px;
+    box-shadow: 3px 5px 10px rgba(13, 13, 14, 0.4);
+    cursor: pointer;
+    outline: none;
+}
+
+.menu__start-button:hover,
+.menu__start-button:active {
+    outline: none;
+    background-color: #c52629;
+}
+
+.menu__cards {
+    position: relative;
+}
+
+.menu__card-back {
+    position: absolute;
+    right: 226px;
+    width: 290px;
+}
+
+.menu__card-front {
+    position: absolute;
+    top: 10px;
+    right: -5px;
+    width: 392px;
+}
+
+/* Стили для игры */
+
+.game__cards-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+}
+
+.game__cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.game__cards_thin {
+    margin: 0 234px;
+}
+
+.game__card {
+    position: relative;
+    width: 220px;
+    height: 341px;
+    margin: 12px;
+    transition: transform 0.9s;
+    transform-style: preserve-3d;
+    cursor: pointer;
+}
+
+.game__card-back:hover {
+    box-shadow: 15px 15px 15px rgba(0,0,0,0.5);
+    transform: translateY(-25px) rotateZ(-2deg);
+}  
+
+.game__card-back,
+.game__card-front {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    border-radius: 12px;
+}
+
+.game__card-back {
+    background-image: url(../images/card.png);
+    background-size: 101%;
+    transition: transform 0.6s;
+}
+
+.game__card-front {
+    background-image: url(../images/game-over-card.png);
+    transform: rotateY(180deg);
+}
+
+.game__card-front_buggy {
+    background-image: url(../images/bug-card.png);
+    background-size: cover;
+}
+
+@media (max-width: 1300px) {
+    /* Стили для меню */
+
+    .menu {
+        margin: 60px 30px 0 60px;
+    }
+
+    .menu__start-button {
+        margin-top: 56px;
+    }
+
+    .menu__card-back {
+        top: -100px;
+        right: 250px;
+        width: 240px;
+    }
+
+    .menu__card-front {
+        top: -100px;
+        right: 50px;
+        width: 334px;
+    }
+
+    /* Стили для игры */
+
+    .game__card {
+        width: 200px;
+        height: 310px;
+    }
+}
+
+@media (max-width: 1200px) {
+    /* Стили для меню */
+
+    .menu__cards {
+        margin-right: 30px;
+    }
+
+    /* Стили для игры */
+
+    .game__card {
+        width: 174px;
+        height: 270px;
+    }
+
+    .game__cards_thin {
+        margin: 0 206px;
+    }
+}
+
+@media (max-width: 1000px) {
+    /* Стили для меню */
+
+    .menu__title {
+        font-size: 44px;
+    }
+
+    .menu__items {
+        margin-top: 50px;
+        font-size: 40px;
+    }
+    
+    .menu__start-button {
+        width: 300px;
+        height: 80px;
+    }
+
+    .menu__card-back,
+    .menu__card-front {
+        top: -105px;
+    }
+
+    /* Стили для игры */
+
+    .game__card {
+        width: 155px;
+        height: 242px;
+        margin: 6px;
+    }
+
+    .game__cards_thin {
+        margin: 0 168px;
+    }
+
+    .game__card-back,
+    .game__card-front {
+        border-radius: 6px;
+    }
+}
+
+@media (max-width: 880px) {
+    /* Стили для меню */
+
+    .menu__card-front {
+        width: 280px;
+    }
+
+    .menu__card-back {
+        right: 164px;
+        width: 208px;
+    }
+
+    /* Стили для игры */
+
+    .game__card {
+        width: 136px;
+        height: 212px;
+    }
+}
+
+@media (max-width: 800px) {
+    body {
+        background-size: 230%;
+    }
+
+    /* Стили для меню */
+
+    .menu {
+        margin: 60px 30px 0 30px;
+    }
+
+    .menu__title {
+        font-size: 44px;
+    }
+
+    .menu__items {
+        margin-top: 40px;
+        font-size: 40px;
+    }
+
+    .menu__card-front,
+    .menu__card-back {
+        display: none;
+    }
+
+    .menu__wrapper {
+        justify-content: center;
+    }
+
+    /* Стили для игры */
+
+    .game__cards {
+        margin: 0 20px;
+    }
+
+    .game__card {
+        width: 115px;
+        height: 178px;
+    }
+
+    .game__cards_thin {
+        margin: 0 148px;
+    }
+}
+
+@media (max-width: 680px) {
+    /* Стили для игры */
+    
+    .game__card {
+        width: 83px;
+        height: 130px;
+    }
+
+    .game__cards_thin {
+        margin: 0 152px;
+    }
+}
+
+@media (max-width: 500px) {
+    /* Стили для игры */
+
+    .game__cards_thin {
+        margin: 0 62px;
+    }
+}
+
+@media (max-width: 430px) {
+    body {
+        background-size: 250%;
+    }
+
+    /* Стили для меню */
+
+    .menu {
+        margin: 30px 30px 0 30px;
+    }
+
+    .menu__title,
+    .menu__items {
+        font-size: 36px;
+    }
+
+    .menu__item-label::before {
+        width: 20px;
+        height: 20px;
+        margin: 0 14px 2px 0;
+    }
+
+    /* Стили для игры */
+
+    .game__card {
+        width: 64px;
+        height: 102px;
+        margin: 3px;
+    }
+}
+
+@media (max-width: 375px) {
+    /* Стили для меню */
+
+    .menu {
+        margin: 20px 20px 0 30px;
+    }
+
+    .menu__title,
+    .menu__items {
+        font-size: 32px;
+    }
+
+    .menu__item-label {
+        margin-bottom: 18px;
+    }
+}
+
+@media (max-width: 320px) {
+    /* Стили для меню */
+
+    .menu__title,
+    .menu__items {
+        font-size: 28px;
+    }
+
+    .menu__item-label {
+        margin-bottom: 14px;
+    }
+
+    .menu__item-label::before {
+        width: 20px;
+        height: 20px;
+        margin: 0 14px 0 0;
+    }
+
+    .menu__start-button {
+        height: 60px;
+    }
+}

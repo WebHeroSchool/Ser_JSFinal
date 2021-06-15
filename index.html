@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Найди баг</title>
+    <link rel="stylesheet" href="./styles/style.css">
+    <link rel="stylesheet" href="./styles/fonts.css">
+</head>
+<body>
+    <section class="menu" id="menu">
+        <h2 class="menu__title">Выберите уровень сложности:</h2>
+        <p class="menu__rules">
+            Выберите сложность и игра начнется. Чем выше уровень - тем больше будет выборка карт.
+        </p>
+        <div class="menu__items">
+            <input 
+                class="menu__item"
+                type="radio"
+                id="easy"
+                name="level"
+                value="easy"
+                checked
+            >
+            <label class="menu__item-label" for="easy">Простой</label>
+            <input 
+                class="menu__item"
+                type="radio"
+                id="medium"
+                name="level"
+                value="medium"
+            >
+            <label class="menu__item-label" for="medium">Средний</label>
+            <input 
+                class="menu__item"
+                type="radio"
+                id="hard"
+                name="level"
+                value="hard"
+            >
+            <label class="menu__item-label" for="hard">Сложный</label>
+        </div>
+        <div class="menu__wrapper">
+            <button class="menu__start-button" id="start-button">Начать игру</button>
+            <div class="menu__cards">
+                <img 
+                    class="menu__card-back"
+                    src="./images/back-card.png"
+                    alt="Игральная карта рубашкой вверх"
+                >
+                <img 
+                    class="menu__card-front"
+                    src="./images/front-card.png"
+                    alt="Игральная карта рубашкой вверх"
+                >
+            </div>
+        </div>
+    </section>
+    <section class="game hidden" id="game">
+        <div class="game__cards-wrapper">
+            <div class="game__cards" id="game-cards"></div>
+        </div>
+    </section>
+    <script src="./script.js"></script>
+</body>
+</html>
